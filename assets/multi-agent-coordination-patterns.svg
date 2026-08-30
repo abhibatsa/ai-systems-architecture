@@ -1,0 +1,55 @@
+<svg width="760" height="300" viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Multi-agent coordination patterns</title>
+<desc>Shows three coordination patterns: sequential where Agent A's output feeds Agent B which feeds Agent C in a linear chain, parallel fan-out/fan-in where multiple agents work independent sub-tasks simultaneously and results combine at the end, and supervisor/hierarchical where one supervisor agent decides which specialized worker agents to delegate to without the workers coordinating directly with each other.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#9CA3AF" stroke-width="1.5"/></marker></defs>
+<style>
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#E6E6E6;}
+.lbl{font-size:11px;font-weight:600;fill:#F5F5F5;}
+.sub{font-size:9px;fill:#C9C9C9;}
+.agent{fill:#241E3D;stroke:#8C7DE0;stroke-width:1;}
+.sup{fill:#3A2A10;stroke:#E0A33D;stroke-width:1;}
+line{stroke:#9CA3AF;stroke-width:1.3;marker-end:url(#a);}
+</style>
+<rect x="0" y="0" width="760" height="300" fill="#0D1117"/>
+
+<text class="lbl" x="30" y="26" font-size="12">Sequential</text>
+<rect class="agent" x="20" y="35" width="80" height="40" rx="6"/>
+<text class="sub" x="60" y="58" text-anchor="middle">Agent A</text>
+<line x1="100" y1="55" x2="140" y2="55"/>
+<rect class="agent" x="140" y="35" width="80" height="40" rx="6"/>
+<text class="sub" x="180" y="58" text-anchor="middle">Agent B</text>
+<line x1="220" y1="55" x2="260" y2="55"/>
+<rect class="agent" x="260" y="35" width="80" height="40" rx="6"/>
+<text class="sub" x="300" y="58" text-anchor="middle">Agent C</text>
+
+<text class="lbl" x="30" y="115" font-size="12">Parallel (fan-out / fan-in)</text>
+<rect class="agent" x="20" y="130" width="70" height="36" rx="6"/>
+<text class="sub" x="55" y="152" text-anchor="middle">Agent A</text>
+<rect class="agent" x="20" y="175" width="70" height="36" rx="6"/>
+<text class="sub" x="55" y="197" text-anchor="middle">Agent B</text>
+<rect class="agent" x="20" y="220" width="70" height="36" rx="6"/>
+<text class="sub" x="55" y="242" text-anchor="middle">Agent C</text>
+<line x1="90" y1="148" x2="150" y2="200"/>
+<line x1="90" y1="193" x2="150" y2="200"/>
+<line x1="90" y1="238" x2="150" y2="200"/>
+<rect class="agent" x="150" y="180" width="90" height="40" rx="6"/>
+<text class="sub" x="195" y="203" text-anchor="middle">Combine</text>
+
+<text class="lbl" x="450" y="26" font-size="12">Supervisor / Hierarchical</text>
+<rect class="sup" x="560" y="35" width="120" height="42" rx="6"/>
+<text class="sub" x="620" y="60" text-anchor="middle">Supervisor</text>
+<line x1="600" y1="77" x2="500" y2="130"/>
+<line x1="620" y1="77" x2="620" y2="130"/>
+<line x1="640" y1="77" x2="720" y2="130"/>
+<rect class="agent" x="450" y="130" width="100" height="40" rx="6"/>
+<text class="sub" x="500" y="153" text-anchor="middle">Worker A</text>
+<rect class="agent" x="570" y="130" width="100" height="40" rx="6"/>
+<text class="sub" x="620" y="153" text-anchor="middle">Worker B</text>
+<rect class="agent" x="680" y="130" width="70" height="40" rx="6"/>
+<text class="sub" x="715" y="153" text-anchor="middle">Worker C</text>
+<text class="sub" x="600" y="195" text-anchor="middle">workers don't coordinate</text>
+<text class="sub" x="600" y="209" text-anchor="middle">with each other directly</text>
+
+<text class="sub" x="380" y="280" text-anchor="middle">Supervisor scales best when the right sequence of steps isn't known ahead of time —</text>
+<text class="sub" x="380" y="295" text-anchor="middle">that's the pattern worth naming for genuinely complex, dynamic tasks.</text>
+</svg>

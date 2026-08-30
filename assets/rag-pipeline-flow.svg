@@ -1,0 +1,58 @@
+<svg width="760" height="320" viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>The RAG pipeline end to end</title>
+<desc>Shows two separate pipelines: an offline ingestion pipeline where source documents are chunked, embedded, and stored in a vector index, and an online query pipeline where a user query is embedded, used for similarity search against the vector index to retrieve top-k relevant chunks, which are combined with the original query into an augmented prompt sent to the LLM to generate a response.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#9CA3AF" stroke-width="1.5"/></marker></defs>
+<style>
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#E6E6E6;}
+.lbl{font-size:11px;font-weight:600;fill:#F5F5F5;}
+.sub{font-size:9px;fill:#C9C9C9;}
+.ing{fill:#173829;stroke:#4CAF8C;stroke-width:1;}
+.qry{fill:#241E3D;stroke:#8C7DE0;stroke-width:1;}
+.idx{fill:#3A2A10;stroke:#E0A33D;stroke-width:1;}
+line{stroke:#9CA3AF;stroke-width:1.3;marker-end:url(#a);}
+</style>
+<rect x="0" y="0" width="760" height="320" fill="#0D1117"/>
+
+<text class="lbl" x="30" y="26" font-size="12">Ingestion pipeline (offline/batch)</text>
+<rect class="ing" x="20" y="40" width="110" height="42" rx="6"/>
+<text class="sub" x="75" y="63" text-anchor="middle">Source documents</text>
+<line x1="130" y1="61" x2="175" y2="61"/>
+<rect class="ing" x="175" y="40" width="90" height="42" rx="6"/>
+<text class="sub" x="220" y="63" text-anchor="middle">Chunking</text>
+<line x1="265" y1="61" x2="310" y2="61"/>
+<rect class="ing" x="310" y="40" width="90" height="42" rx="6"/>
+<text class="sub" x="355" y="63" text-anchor="middle">Embedding</text>
+<line x1="400" y1="61" x2="445" y2="61"/>
+
+<rect class="idx" x="445" y="30" width="140" height="62" rx="8"/>
+<text class="lbl" x="515" y="55" text-anchor="middle" font-size="11">Vector Index</text>
+<text class="sub" x="515" y="72" text-anchor="middle">runs ahead of query time,</text>
+<text class="sub" x="515" y="84" text-anchor="middle">updated as source changes</text>
+
+<line x1="30" y1="90" x2="30" y2="140" stroke="none"/>
+<text class="lbl" x="30" y="150" font-size="12">Query pipeline (online/real-time)</text>
+
+<rect class="qry" x="20" y="165" width="90" height="42" rx="6"/>
+<text class="sub" x="65" y="188" text-anchor="middle">User query</text>
+<line x1="110" y1="186" x2="155" y2="186"/>
+<rect class="qry" x="155" y="165" width="100" height="42" rx="6"/>
+<text class="sub" x="205" y="188" text-anchor="middle">Embed query</text>
+<line x1="255" y1="186" x2="300" y2="186"/>
+
+<line x1="515" y1="92" x2="515" y2="150"/>
+<line x1="515" y1="150" x2="300" y2="186"/>
+<text class="sub" x="450" y="140">similarity search</text>
+
+<rect class="qry" x="300" y="165" width="120" height="42" rx="6"/>
+<text class="sub" x="360" y="188" text-anchor="middle">Top-k chunks</text>
+<line x1="420" y1="186" x2="465" y2="186"/>
+<rect class="qry" x="465" y="165" width="140" height="42" rx="6"/>
+<text class="sub" x="535" y="182" text-anchor="middle">Augmented prompt</text>
+<text class="sub" x="535" y="196" text-anchor="middle">query + context</text>
+<line x1="605" y1="186" x2="650" y2="186"/>
+<rect class="qry" x="650" y="165" width="90" height="42" rx="6"/>
+<text class="sub" x="695" y="188" text-anchor="middle">LLM → response</text>
+
+<text class="sub" x="380" y="255" text-anchor="middle">The most common interview miss: drawing only the query pipeline and forgetting</text>
+<text class="sub" x="380" y="270" text-anchor="middle">the ingestion pipeline — including how the index stays current — is a separate, equal concern.</text>
+</svg>

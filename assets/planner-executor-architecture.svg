@@ -1,0 +1,39 @@
+<svg width="720" height="260" viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Planner-executor architecture</title>
+<desc>Shows a planner producing a step-by-step plan from a goal, which passes through an optional review checkpoint before an executor carries out each step, with a feedback loop back to the planner for replanning if a step fails.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#9CA3AF" stroke-width="1.5"/></marker></defs>
+<style>
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#E6E6E6;}
+.lbl{font-size:11.5px;font-weight:600;fill:#F5F5F5;}
+.sub{font-size:9.5px;fill:#C9C9C9;}
+.plan{fill:#3A2A10;stroke:#E0A33D;stroke-width:1;}
+.review{fill:#241E3D;stroke:#8C7DE0;stroke-width:1;}
+.exec{fill:#173829;stroke:#4CAF8C;stroke-width:1;}
+line{stroke:#9CA3AF;stroke-width:1.3;marker-end:url(#a);}
+</style>
+<rect x="0" y="0" width="720" height="260" fill="#0D1117"/>
+
+<rect class="plan" x="30" y="80" width="140" height="56" rx="8"/>
+<text class="lbl" x="100" y="103" text-anchor="middle" font-size="11">Planner</text>
+<text class="sub" x="100" y="121" text-anchor="middle">goal → step sequence</text>
+
+<line x1="170" y1="108" x2="240" y2="108"/>
+
+<rect class="review" x="240" y="80" width="150" height="56" rx="8"/>
+<text class="lbl" x="315" y="103" text-anchor="middle" font-size="10.5">Review checkpoint</text>
+<text class="sub" x="315" y="121" text-anchor="middle">(human or automated)</text>
+
+<line x1="390" y1="108" x2="460" y2="108"/>
+
+<rect class="exec" x="460" y="80" width="150" height="56" rx="8"/>
+<text class="lbl" x="535" y="103" text-anchor="middle" font-size="11">Executor</text>
+<text class="sub" x="535" y="121" text-anchor="middle">carries out each step</text>
+
+<line x1="535" y1="136" x2="535" y2="180"/>
+<line x1="535" y1="180" x2="100" y2="180"/>
+<line x1="100" y1="180" x2="100" y2="136"/>
+<text class="sub" x="317" y="196" text-anchor="middle">on failure: replan with the failure as new context</text>
+
+<text class="sub" x="350" y="225" text-anchor="middle">A specific instance of the supervisor pattern — the planner supervises,</text>
+<text class="sub" x="350" y="240" text-anchor="middle">the executor is the worker actually carrying out the plan.</text>
+</svg>

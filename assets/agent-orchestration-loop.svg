@@ -1,0 +1,43 @@
+<svg width="600" height="380" viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>The agent think-act-observe loop</title>
+<desc>Shows a circular loop with three stages: Reason, where the LLM considers the goal and current state; Act, where it takes an action such as calling a tool; and Observe, where the result feeds back into context, with the loop repeating until a stopping condition such as goal completion, a max iteration cap, or a stuck-pattern detector is reached.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#9CA3AF" stroke-width="1.5"/></marker></defs>
+<style>
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#E6E6E6;}
+.lbl{font-size:13px;font-weight:700;fill:#F5F5F5;}
+.sub{font-size:10px;fill:#C9C9C9;}
+.box{stroke-width:1.5;}
+.reason{fill:#241E3D;stroke:#8C7DE0;}
+.act{fill:#3A2A10;stroke:#E0A33D;}
+.observe{fill:#173829;stroke:#4CAF8C;}
+.stop{fill:#3A1E1E;stroke:#D97070;}
+line{stroke:#9CA3AF;stroke-width:1.5;marker-end:url(#a);}
+</style>
+<rect x="0" y="0" width="600" height="380" fill="#0D1117"/>
+
+<rect class="box reason" x="220" y="20" width="160" height="60" rx="10"/>
+<text class="lbl" x="300" y="45" text-anchor="middle">Reason</text>
+<text class="sub" x="300" y="65" text-anchor="middle">decide next action</text>
+
+<line x1="380" y1="60" x2="470" y2="150"/>
+<rect class="box act" x="440" y="150" width="140" height="60" rx="10"/>
+<text class="lbl" x="510" y="175" text-anchor="middle">Act</text>
+<text class="sub" x="510" y="195" text-anchor="middle">call a tool</text>
+
+<line x1="500" y1="210" x2="380" y2="290"/>
+<rect class="box observe" x="220" y="290" width="160" height="60" rx="10"/>
+<text class="lbl" x="300" y="315" text-anchor="middle">Observe</text>
+<text class="sub" x="300" y="335" text-anchor="middle">feed result into context</text>
+
+<line x1="220" y1="300" x2="130" y2="200"/>
+<line x1="120" y1="150" x2="220" y2="60"/>
+<text class="sub" x="90" y="185" text-anchor="middle" transform="rotate(-90 90 185)">repeat</text>
+
+<rect class="box stop" x="20" y="10" width="150" height="70" rx="8"/>
+<text class="lbl" x="95" y="30" text-anchor="middle" font-size="11">Stopping conditions</text>
+<text class="sub" x="95" y="48" text-anchor="middle">goal complete /</text>
+<text class="sub" x="95" y="60" text-anchor="middle">max iterations /</text>
+<text class="sub" x="95" y="72" text-anchor="middle">stuck-pattern detected</text>
+
+<text class="sub" x="300" y="370" text-anchor="middle">Without a real stopping condition, agents can loop indefinitely — burning cost without converging.</text>
+</svg>
