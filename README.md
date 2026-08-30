@@ -54,6 +54,16 @@ one. Flag if that's wrong and it'll move.
 - [AI Test Engineering Career Prep](https://github.com/abhibatsa/ai-test-engineering-career-prep) *(private)* — testing what this repo teaches you to build
 - [AI Tools Mastery Academy](https://github.com/abhibatsa/ai-tools-mastery-academy) *(private)* — tool usage, not architecture
 
+## Support the cause
+1. Give the repo **Star**
+2. Share it with someone you know
+3. Post about it on Social Platforms - LinkedIn, Discord, Reddit
+4. Like, Share, Subscribe and Follow Me:
+
+[![YouTube](https://img.shields.io/badge/YouTube-Abhijeet%20Batsa-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@abhijeetbatsa)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Abhijeet%20Batsa-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abhijeetbatsa/)
+
 ## 🤝 Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md).
